@@ -26,7 +26,8 @@ df %>% dplyr::filter(province == "Canada") %>%
     marker = list(radius = 1,
                   symbol = "circle"))) %>%
   hc_title(text = paste("Monkeypox - Count of confirmed cases in Canada"), align = "left") %>%
-  hc_credits(text = "@vaccintrackerqc | source: https://health-infobase.canada.ca/monkeypox", enabled = TRUE)
+  hc_credits(text = "@vaccintrackerqc | source: Public Health Agency of Canada", enabled = TRUE)
+# hc_credits(text = "@vaccintrackerqc | source: https://health-infobase.canada.ca/monkeypox", enabled = TRUE)
 
 # By province
 nb_province <- df %>% dplyr::filter(province != "Canada") %>% pull(province) %>% unique %>% length
@@ -55,7 +56,8 @@ df %>% dplyr::filter(province != "Canada") %>%
     marker = list(radius = 1,
                   symbol = "circle"))) %>%
   hc_title(text = paste("Monkeypox - Count of confirmed cases in Canada by province"), align = "left") %>%
-  hc_credits(text = "@vaccintrackerqc | source: https://health-infobase.canada.ca/monkeypox", enabled = TRUE)
+  hc_credits(text = "@vaccintrackerqc | source: Public Health Agency of Canada", enabled = TRUE)
+# hc_credits(text = "@vaccintrackerqc | source: https://health-infobase.canada.ca/monkeypox", enabled = TRUE)
 
 #
 htmltools::save_html(evol_nb_cases_sum_Canada, file = "_codes/tmp_html/evol_nb_cases_sum_Canada_raw.html")
