@@ -30,8 +30,12 @@ df %>% dplyr::filter(province == "Canada") %>%
 # hc_credits(text = "@vaccintrackerqc | source: https://health-infobase.canada.ca/monkeypox", enabled = TRUE)
 
 # By province
-nb_province <- df %>% dplyr::filter(province != "Canada") %>% pull(province) %>% unique %>% length
+province_names <- df %>% dplyr::filter(province != "Canada") %>% pull(province) %>% unique %>% sort
+nb_province <- province_names %>% length
 cols_province <- wes_palette("Zissou1", nb_province, type = "continuous") %>% as.vector
+names(cols_province) <- province_names
+names(cols_province) <- NULL
+
 
 evol_nb_cases_sum_Canada_byProvince <- 
 df %>% dplyr::filter(province != "Canada") %>% 

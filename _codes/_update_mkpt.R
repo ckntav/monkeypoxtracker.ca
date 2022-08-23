@@ -28,6 +28,7 @@ if (TRUE) {
 
 source("_codes/scripts/makeRDS.R")
 source("_codes/scripts/evolution_nb_cases_sum.R")
+source("_codes/scripts/evolution_nb_cases_7day_average.R")
 
 
 
