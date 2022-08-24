@@ -5,6 +5,10 @@ classes: wide
 highchart: true
 ---
 
+{% include map_ca_mkpt.html %}
+
+<br>
+
 {% include evol_nb_cases_sum_Canada.html %}
 {% include evol_nb_cases_sum_Canada_7days.html %}
 
