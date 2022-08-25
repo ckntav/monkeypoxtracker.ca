@@ -104,7 +104,7 @@ hcmap(
     valueSuffix = " cases"
   )) %>% 
   # hc_colorAxis(stops = stops) %>% 
-  hc_colorAxis(minColor = "#F5F5F5", maxColor = "#5F8575") %>% 
+  hc_colorAxis(minColor = "#E8E8E8", maxColor = "#5F8575") %>% 
   hc_subtitle(text = date_subtitle, align = "left") %>% 
   hc_credits(text = "@vaccintrackerqc | source: Public Health Agency of Canada", enabled = TRUE)
 
