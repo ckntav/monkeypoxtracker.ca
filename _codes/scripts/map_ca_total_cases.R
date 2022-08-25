@@ -2,15 +2,15 @@
 mapid_ca <- "countries/ca/ca-all"
 
 # basics
-camap <- hcmap(mapid_ca)
-camap
+# camap <- hcmap(mapid_ca)
+# camap
 
 # chloropleths
 mapdata <- download_map_data(mapid_ca)
-names(mapdata)
+# names(mapdata)
 
 mapdata_df <- get_data_from_map(mapdata)      
-glimpse(mapdata_df)      
+# glimpse(mapdata_df)      
 colnames(mapdata_df)      
       
 #
@@ -70,11 +70,24 @@ for (p_zero in province_zero) {
   df_latest_byProvince <- rbind(df_latest_byProvince, line)
 }
 
-
+#
 data_map <- df_latest_byProvince %>%
   left_join(mapping_province, bt = "province") %>% 
   mutate(total_cases_chr = ifelse(total_cases > 0, as.character(total_cases), ""))
 
+# colors
+# n <- 5
+# 
+# stops <- data.frame(
+#   q = 0:n/n,
+#   c = c("#440154", "#414487", "#2A788E", "#22A884", "#7AD151", "#FDE725"),
+#   stringsAsFactors = FALSE
+# )
+# 
+# stops <- list_parse2(stops)
+
+
+#
 map_ca_mkpt <- 
 hcmap(
   mapid_ca,
@@ -84,12 +97,14 @@ hcmap(
   name = "Total confirmed cases",
   dataLabels = list(enabled = TRUE, format = "{point.code}<br>{point.total_cases_chr}"),
   borderColor = "#FAFAFA",
-  borderWidth = 0.5,
+  borderWidth = 1,
   tooltip = list(
     # valueDecimals = 2,
     # valuePrefix = "$",
     valueSuffix = " cases"
   )) %>% 
+  # hc_colorAxis(stops = stops) %>% 
+  hc_colorAxis(minColor = "#F5F5F5", maxColor = "#5F8575") %>% 
   hc_subtitle(text = date_subtitle, align = "left") %>% 
   hc_credits(text = "@vaccintrackerqc | source: Public Health Agency of Canada", enabled = TRUE)
 

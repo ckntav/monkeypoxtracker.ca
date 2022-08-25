@@ -1,7 +1,7 @@
 ---
 layout: single
 title: How many monkeypox cases in Canada ?
-classes: wide
+# classes: wide
 highchart: true
 ---
 
