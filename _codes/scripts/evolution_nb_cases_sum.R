@@ -26,7 +26,7 @@ df %>% dplyr::filter(province == "Canada") %>%
     marker = list(radius = 1,
                   symbol = "circle"))) %>%
   hc_title(text = paste("Monkeypox - Count of confirmed cases in Canada"), align = "left") %>%
-  hc_credits(text = "@mktracker_ca", enabled = TRUE)
+  hc_credits(text = "@mkptracker_ca", enabled = TRUE)
 # hc_credits(text = "@vaccintrackerqc | source: https://health-infobase.canada.ca/monkeypox", enabled = TRUE)
 
 # By province
@@ -60,7 +60,7 @@ df %>% dplyr::filter(province != "Canada") %>%
     marker = list(radius = 1,
                   symbol = "circle"))) %>%
   hc_title(text = paste("Monkeypox - Count of confirmed cases in Canada by province"), align = "left") %>%
-  hc_credits(text = "@mktracker_ca", enabled = TRUE)
+  hc_credits(text = "@mkptracker_ca", enabled = TRUE)
 # hc_credits(text = "@vaccintrackerqc | source: https://health-infobase.canada.ca/monkeypox", enabled = TRUE)
 
 #

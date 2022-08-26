@@ -1,10 +1,11 @@
 ---
 layout: single
 title: How many monkeypox cases in Canada ?
-# classes: wide
+classes: wide
 highchart: true
 ---
 
+Last update : {% include date_last_update.html %}
 {% include map_ca_mkpt.html %}
 
 <br>

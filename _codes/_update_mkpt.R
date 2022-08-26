@@ -12,7 +12,7 @@ library(rvest)
 # library(sf)
 
 
-date_mkp <- "20220824"
+date_mkp <- "20220826"
 file_mkp <- FALSE
 
 if (TRUE) {
@@ -27,6 +27,7 @@ if (TRUE) {
 }
 
 if (file_mkp) {
+  source("_codes/scripts/set_date_last_update.R")
   source("_codes/scripts/makeRDS.R")
   source("_codes/scripts/evolution_nb_cases_sum.R")
   source("_codes/scripts/evolution_nb_cases_7day_average.R")
