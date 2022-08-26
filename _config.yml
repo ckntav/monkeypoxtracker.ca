@@ -21,11 +21,11 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : # "Your Name"
 description              : "How many monkeypox cases in Canada"
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://monkeypoxtracker.ca/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : /assets/images/logo_mkpt_v3.jpg # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -104,9 +104,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : # "Your Name"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : # "I am an **amazing** person."
   location         : "Quebec, Canada"
   email            :
   links:
@@ -134,7 +134,7 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url:
+      url: "https://twitter.com/mktracker_ca"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url:

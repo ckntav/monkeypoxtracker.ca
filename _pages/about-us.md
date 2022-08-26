@@ -5,4 +5,4 @@ permalink: /about_us/
 ---
 
 # Sources
-<a href="https://www.google.com" target="_blank">XXX</a><br><font size="3">XXX</font>
+<a href="https://health-infobase.canada.ca/monkeypox/" target="_blank">Monkeypox epidemiology update</a><br><font size="3">Public Health Agency of Canada (PHAC)</font>
