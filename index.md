@@ -8,6 +8,11 @@ highchart: true
 Last update : {% include date_last_update.html %}
 {% include map_ca_mkpt.html %}
 
+<!-- <br>  -->
+<!-- <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css"> -->
+<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"> -->
+<!-- {% include table_variation_mkpt_byProvince.html %} -->
+
 <br>
 
 {% include evol_nb_cases_sum_Canada.html %}

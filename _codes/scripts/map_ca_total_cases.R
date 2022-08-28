@@ -1,78 +1,19 @@
 #
 mapid_ca <- "countries/ca/ca-all"
-
-# basics
 # camap <- hcmap(mapid_ca)
 # camap
-
-# chloropleths
 mapdata <- download_map_data(mapid_ca)
 # names(mapdata)
-
 mapdata_df <- get_data_from_map(mapdata)      
-# glimpse(mapdata_df)      
 colnames(mapdata_df)      
-      
-#
-# data_fake <- mapdata_df %>% 
-#   dplyr::select(code = `hc-a2`) %>% 
-#   mutate(value = 1e5 * abs(rt(nrow(mapdata_df), df = 10)))
-#       
-# glimpse(data_fake)
+ 
 # 
-# #
-# hcmap(
-#   mapid_ca,
-#   data = data_fake,
-#   value = "value",
-#   joinBy = c("hc-a2", "code"),
-#   name = "Fake data",
-#   dataLabels = list(enabled = TRUE, format = "{point.code}"),
-#   borderColor = "#FAFAFA",
-#   borderWidth = 0.1,
-#   tooltip = list(
-#     # valueDecimals = 2,
-#     # valuePrefix = "$",
-#     valueSuffix = " cases"
-#   ))
-
-
-
-# 
-mapping_province <- data.frame(
-  code = c("BC", "NU", "NT", "AB", "NL", "SK", "MB", "QC", "ON", "NB", "NS", "PE", "YT"),
-  province = c("British Columbia", "Nunavut", "Northwest Territories",
-               "Alberta","Newfoundland and Labrador","Saskatchewan", "Manitoba",
-               "Quebec", "Ontario", "New Brunswick", "Nova Scotia",              
-               "Prince Edward Island", "Yukon"))
-# 
-df <- readRDS(file.path("_codes", "input", "rds", paste0(date_mkp, "_monkeypox_canada.rds")))
-
 date_subtitle <- paste("As of", format(ymd(date_mkp), "%B %d, %Y"))
 
-province_names <- df %>% dplyr::filter(province != "Canada") %>% pull(province) %>% unique %>% sort
-
-df_latest_byProvince <- data.frame()
-for (province_i in province_names) {
-  df_province <- df %>% dplyr::filter(province == province_i) %>% 
-    dplyr::filter(date == max(date)) %>% 
-    dplyr::select(-nb_cases_delta) %>% 
-    set_names("date", "province", "total_cases")
-  
-  df_latest_byProvince <- rbind(df_latest_byProvince, df_province)
-}
-
-province_zero <- mapping_province$province[!mapping_province$province %in% df_latest_byProvince$province]
-for (p_zero in province_zero) {
-  line <- data.frame(date = ymd(date_mkp),
-                     province = p_zero,
-                     total_cases = 0)
-  df_latest_byProvince <- rbind(df_latest_byProvince, line)
-}
+df_latest_byProvince <- readRDS(file.path("_codes", "input", "rds", paste0(date_mkp, "latest_monkeypox_canada.rds")))
 
 #
 data_map <- df_latest_byProvince %>%
-  left_join(mapping_province, bt = "province") %>% 
   mutate(total_cases_chr = ifelse(total_cases > 0, as.character(total_cases), ""))
 
 # colors
