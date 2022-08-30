@@ -66,7 +66,7 @@ formattable(df_var,
             )
 
 
-table_html <- format_table(table_var)
+table_html <- format_table(table_var, align = c("r", "c", "c", "c", "c"))
 file_html_mapca <- file.path("_includes", "table_variation_mkpt_byProvince.html")
 fileConn_mapca <- file(file_html_mapca)
 writeLines(table_html, fileConn_mapca)
