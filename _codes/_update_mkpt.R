@@ -32,4 +32,5 @@ if (file_mkp) {
   source("_codes/scripts/evolution_nb_cases_sum.R")
   source("_codes/scripts/evolution_nb_cases_7day_average.R")
   source("_codes/scripts/map_ca_total_cases.R")
+  source("_codes/scripts/var_nb_cases_byProvince.R")
 }
