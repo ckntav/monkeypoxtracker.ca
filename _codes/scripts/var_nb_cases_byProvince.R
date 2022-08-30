@@ -55,7 +55,6 @@ improvement_formatter <- formatter("span",
                                    x ~ icontext(ifelse(x>0, "arrow-up", ""), x)
 )
 
-
 table_var <- 
 formattable(df_var,
             align = c("r", "c", "c", "c", "c"),
@@ -73,19 +72,10 @@ fileConn_mapca <- file(file_html_mapca)
 writeLines(table_html, fileConn_mapca)
 close(fileConn_mapca)
 
-#
-library(knitr)
-table_var %>% kable
 
-# table_var_widget <- as.htmlwidget(table_var)
-# 
-# #
-# htmltools::save_html(table_html, file = "_codes/tmp_html/table_variation_mkpt_byProvince_raw.html")
-# html_mapca <- read_html("_codes/tmp_html/table_variation_mkpt_byProvince_raw.html")
-# body_mapca <- html_mapca %>% html_nodes("body")
-# div_mapca <- body_mapca %>% html_nodes("div") %>% as.character
-# script_mapca <- body_mapca %>% html_nodes("script") %>% as.character
-# file_html_mapca <- file.path("_includes", "table_variation_mkpt_byProvince.html")
-# fileConn_mapca <- file(file_html_mapca)
-# writeLines(c(div_mapca, "\n", script_mapca), fileConn_mapca)
-# close(fileConn_mapca)
+#
+htmlwidgets::saveWidget(widget = as.htmlwidget(table_var), file = "_pics/tmp_html/var_nb_cases_byProvince.html")
+webshot::webshot(url = "_pics/tmp_html/var_nb_cases_byProvince.html", 
+                 file = file.path("_pics", "var_nb_cases_byProvince", paste0(date_mkp, "_var_nb_cases_byProvince.png")),
+                 vwidth = 750, vheight = 500,
+                 delay = 3)
