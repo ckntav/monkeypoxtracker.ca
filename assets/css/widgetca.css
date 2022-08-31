@@ -1,0 +1,46 @@
+.widgetca{
+	display: block;
+	text-align: center;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+.widgetca div{
+	display: inline-block;
+    border: solid 1px #5F8575;
+    border-radius: 10px;
+	margin: 5px;
+	margin-left: 15px;
+	margin-right: 15px;
+	width: 30%;
+	padding: 10px 20px 10px 20px;
+	background: #5F8575;
+    color: #FFFFFF;
+	font-family: 'Roboto', sans-serif;
+	text-align: left;
+	vertical-align: top;
+}
+
+.widgetca div:hover{
+	background: #E8E8E8;
+	border: solid 1px #E8E8E8;
+	color: #40514e;
+}
+
+.widgetca span{
+	display: block;
+}
+
+.widgetca .widget_des {
+	font-size: 0.6rem;
+}
+
+.widgetca .widget_val {
+	font-weight: bold;
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+.widgetca .widget_date {
+	font-size: 0.7rem;
+}
