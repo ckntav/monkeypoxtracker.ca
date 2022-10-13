@@ -32,14 +32,23 @@ for (province_i in updated_province) {
 }
 
 #
-df_var <- df_latest_byProvince %>% 
-  left_join(df_var_tmp, by = "province") %>% 
-  dplyr::select(province, code, total_cases, nb_var, since) %>% 
-  arrange(desc(nb_var), desc(total_cases)) %>% 
-  mutate(nb_var = ifelse(is.na(nb_var), "", nb_var),
-         since = ifelse(is.na(since), "", format(ymd(since), "%B %d, %Y"))) %>% 
-  set_names("province", "code", "total confirmed cases", "variation", "since")
-
+if (nrow(df_var_tmp != 0 & ncol(df_var_tmp) != 0)) {
+  df_var <- df_latest_byProvince %>% 
+    left_join(df_var_tmp, by = "province") %>% 
+    dplyr::select(province, code, total_cases, nb_var, since) %>% 
+    arrange(desc(nb_var), desc(total_cases)) %>% 
+    mutate(nb_var = ifelse(is.na(nb_var), "", nb_var),
+           since = ifelse(is.na(since), "", format(ymd(since), "%B %d, %Y"))) %>% 
+    set_names("province", "code", "total confirmed cases", "variation", "since")
+} else {
+  df_var <- df_latest_byProvince %>%
+    mutate(nb_var = NA, since = NA) %>% 
+    mutate(nb_var = ifelse(is.na(nb_var), "", nb_var),
+           since = ifelse(is.na(since), "", format(ymd(since), "%B %d, %Y"))) %>% 
+    dplyr::select(province, code, total_cases, nb_var, since) %>%
+    arrange(desc(nb_var), desc(total_cases)) %>% 
+    set_names("province", "code", "total confirmed cases", "variation", "since")
+}
 
 library(formattable)
 
