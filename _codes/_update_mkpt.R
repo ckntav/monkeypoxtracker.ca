@@ -11,7 +11,6 @@ library(rvest)
 # # library(leaflet)
 # library(sf)
 
-
 date_mkp <- "20221014"
 file_mkp <- FALSE
 
