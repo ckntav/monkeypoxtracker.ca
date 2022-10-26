@@ -1,10 +1,11 @@
 df <- readRDS(file.path("_codes", "input", "rds", paste0(date_mkp, "_monkeypox_canada.rds")))
 
-date_subtitle <- paste("As of" ,format(ymd(date_mkp), "%B %d, %Y"))
+date_subtitle <- paste("As of", format(ymd(date_mkp), "%B %d, %Y"))
 
 # In Canada
 evol_nb_cases_sum_Canada <- 
 df %>% dplyr::filter(province == "Canada") %>% 
+  dplyr::filter(!date %in% c(ymd("20221012"), ymd("20221007"))) %>% 
   hchart("spline", hcaes(x = date, y = nb_cases_sum, group = province, v = province),
          dataLabels = list(enabled = TRUE)) %>%
   hc_tooltip(# valueDecimals = 2,
@@ -36,9 +37,9 @@ cols_province <- wes_palette("Zissou1", nb_province, type = "continuous") %>% as
 names(cols_province) <- province_names
 names(cols_province) <- NULL
 
-
 evol_nb_cases_sum_Canada_byProvince <- 
-df %>% dplyr::filter(province != "Canada") %>% 
+df %>% dplyr::filter(province != "Canada") %>%
+  dplyr::filter(nb_cases_sum != 521) %>% 
   hchart("spline", hcaes(x = date, y = nb_cases_sum, group = province, v = province),
          dataLabels = list(enabled = TRUE)) %>%
   hc_tooltip(# valueDecimals = 2,

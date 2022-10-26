@@ -52,6 +52,7 @@ for (province_i in province_list) {
 evol_nb_cases_sum_Canada_7days <- 
 bigdf_7days %>%
   dplyr::filter(province == "Canada") %>% 
+  dplyr::filter(date != ymd("20221014")) %>% 
   hchart("spline", hcaes(x = date, y = meanCases7days, group = province, v = province),
          dataLabels = list(enabled = TRUE, format = "{point.y:.1f}")) %>% 
   hc_tooltip(# valueDecimals = 2,
