@@ -7,6 +7,11 @@ highchart: true
 
 Last update : {% include date_last_update.html %}
 
+<div id="twitter_timeline">
+	<a class="twitter-timeline" data-width="800" data-height="600" href="https://twitter.com/mkptracker_ca?ref_src=twsrc%5Etfw">Tweets by mkptracker_ca</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<br>
+
 <link href="/assets/css/widgetca.css" rel="stylesheet" type="text/css">
 {% include widget_nb_cases_canada.html %}
 
