@@ -83,7 +83,7 @@ close(fileConn_mapca)
 
 
 #
-htmlwidgets::saveWidget(widget = as.htmlwidget(table_var), file = "_pics/tmp_html/var_nb_cases_byProvince.html")
+htmlwidgets::saveWidget(widget = as.htmlwidget(table_var), file = "_pics/tmp_html/var_nb_cases_byProvince.html", selfcontained = FALSE)
 webshot::webshot(url = "_pics/tmp_html/var_nb_cases_byProvince.html", 
                  file = file.path("_pics", "var_nb_cases_byProvince", paste0(date_mkp, "_var_nb_cases_byProvince.png")),
                  vwidth = 750, vheight = 500,

@@ -72,7 +72,7 @@ map_ca_mkpt_tweet <- map_ca_mkpt %>%
   hc_credits(text = "MonkeypoxTracker.ca | @mkptracker_ca", enabled = TRUE, mapText = "")
   
 #
-htmlwidgets::saveWidget(widget = map_ca_mkpt_tweet, file = "_pics/tmp_html/map_ca_mkpt_tweet.html")
+htmlwidgets::saveWidget(widget = map_ca_mkpt_tweet, file = "_pics/tmp_html/map_ca_mkpt_tweet.html", selfcontained = FALSE)
 webshot::webshot(url = "_pics/tmp_html/map_ca_mkpt_tweet.html", 
                  file = file.path("_pics", "canada_map_tweet", paste0(date_mkp, "_map_ca_mkpt_tweet.png")),
                  vwidth = 1000, vheight = 750,
