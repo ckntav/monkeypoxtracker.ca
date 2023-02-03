@@ -42,7 +42,7 @@ for (p_zero in province_zero) {
 }
 
 df_latest_byProvince <- df_latest_byProvince %>% 
-  left_join(mapping_province, bt = "province")
+  left_join(mapping_province, by = "province")
 
 #
 saveRDS(df_latest_byProvince, file.path("_codes", "input", "rds", paste0(date_mkp, "latest_monkeypox_canada.rds"))) 
