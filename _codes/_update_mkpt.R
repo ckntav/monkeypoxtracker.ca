@@ -34,4 +34,3 @@ if (file_mkp) {
   source("_codes/scripts/var_nb_cases_byProvince.R")
   source("_codes/scripts/widget_nb_cases_canada.R")
 }
-
