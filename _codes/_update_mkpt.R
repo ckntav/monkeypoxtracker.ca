@@ -11,7 +11,7 @@ library(rvest)
 # # library(leaflet)
 # library(sf)
 
-date_mkp <- "20230217"
+date_mkp <- "20230303"
 file_mkp <- FALSE
 
 if (TRUE) {
@@ -34,3 +34,4 @@ if (file_mkp) {
   source("_codes/scripts/var_nb_cases_byProvince.R")
   source("_codes/scripts/widget_nb_cases_canada.R")
 }
+
